@@ -88,6 +88,18 @@ class Map
         end
         nil
     end
+
+    def show
+        p @map
+    end
+
+    def delete(key)
+        @map.each_with_index do |subArr, idx|
+            if subArr.include?(key)
+                @map.delete_at(idx)
+            end
+        end
+    end
 end
 
 map1 = Map.new
@@ -98,6 +110,9 @@ p map1
 map1.set(3,5)
 p map1
 p map1.get(3)
+map1.show
+map1.delete(3)
+p map1
 
 
 
