@@ -47,13 +47,30 @@ class Queue
 
 end
 
-queue1 = Queue.new
-p queue1
-queue1.enqueue(1)
-queue1.enqueue(2)
-queue1.enqueue(3)
-queue1.enqueue(4)
-p queue1
-queue1.dequeue
-p queue1
-p queue1.peek
+# queue1 = Queue.new
+# p queue1
+# queue1.enqueue(1)
+# queue1.enqueue(2)
+# queue1.enqueue(3)
+# queue1.enqueue(4)
+# p queue1
+# queue1.dequeue
+# p queue1
+# p queue1.peek
+
+class Map
+
+    def initialize
+        @map = Array.new
+    end
+
+    def set(key, val)
+        @map << [key, val]
+    end
+end
+
+map1 = Map.new
+p map1
+map1.set(1, 2)
+map1.set(3, 4)
+p map1
