@@ -34,7 +34,26 @@ class Queue
     end
 
     def enqueue(el)
-        @queue.unshift(el)
+        @queue.push(el)
+    end
+
+    def dequeue
+        @queue.shift
+    end
+
+    def peek
+        return @queue.first
     end
 
 end
+
+queue1 = Queue.new
+p queue1
+queue1.enqueue(1)
+queue1.enqueue(2)
+queue1.enqueue(3)
+queue1.enqueue(4)
+p queue1
+queue1.dequeue
+p queue1
+p queue1.peek
