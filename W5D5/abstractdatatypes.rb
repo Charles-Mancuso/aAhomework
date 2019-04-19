@@ -65,12 +65,39 @@ class Map
     end
 
     def set(key, val)
-        @map << [key, val]
+        if check(key, val) == false
+            @map << [key, val]
+        end
+    end
+
+    def check(key, val)
+        @map.each do |subArr| 
+            if subArr[0] == key 
+                subArr[1] = val
+                return true
+            end
+        end
+        false
+    end
+
+    def get(key)
+        @map.each do |subArr| 
+            if subArr.include?(key)
+                return subArr
+            end
+        end
+        nil
     end
 end
 
 map1 = Map.new
-p map1
+
 map1.set(1, 2)
 map1.set(3, 4)
 p map1
+map1.set(3,5)
+p map1
+p map1.get(3)
+
+
+
