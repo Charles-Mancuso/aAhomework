@@ -8,15 +8,21 @@
     end
 
     def pop
-      # removes one element from the stack
+      @stack.pop
     end
 
     def peek
-      # returns, but doesn't remove, the top element in the stack
+      return @stack.first
     end
   end
 
   stack1 = Stack.new
   p stack1
   stack1.push(1)
+  stack1.push(2)
+  stack1.push("array")
+  stack1.push(false)
   p stack1
+  stack1.pop
+  p stack1
+  p stack1.peek
